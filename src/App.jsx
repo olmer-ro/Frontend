@@ -13,7 +13,7 @@ function App() {
         const fetchItems = async () => {
             try {
                 // Cambié 'localhost' por 'backend' para que apunte al servicio Docker
-                const response = await fetch('http://backend:3001/api/items');
+                const response = await fetch('http://localhost:3001/api/items');
                 const data = await response.json();
                 setItems(data);
             } catch (error) {
@@ -30,7 +30,7 @@ function App() {
 
     // Función para editar un producto
     const editItem = async (updatedItem) => {
-        const response = await fetch(`http://backend:3001/api/items/${updatedItem.id}`, {  // Cambié 'localhost' por 'backend'
+        const response = await fetch(`http://localhost:3001/api/items/${updatedItem.id}`, {  // Cambié 'localhost' por 'backend'
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updatedItem),
@@ -43,7 +43,7 @@ function App() {
 
     // Función para eliminar un producto
     const deleteItem = async (id) => {
-        const response = await fetch(`http://backend:3001/api/items/${id}`, {  // Cambié 'localhost' por 'backend'
+        const response = await fetch(`http://localhost:3001/api/items/${id}`, {  // Cambié 'localhost' por 'backend'
             method: 'DELETE',
         });
 

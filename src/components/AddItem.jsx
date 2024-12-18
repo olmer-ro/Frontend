@@ -8,7 +8,7 @@ function AddItem({ onAddItem }) {
         const newItem = { name };
 
         try {
-            const response = await fetch('http://backend:3001/api/items', {
+            const response = await fetch('http://localhost:3001/api/items', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newItem)
